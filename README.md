@@ -3,49 +3,22 @@
 
 ---
 
-## 1. Project Overview (نظرة عامة على المشروع)
-The **MetroVision** route planning engine is an advanced, production-ready backend service designed to calculate optimal metro routes, exact travel durations, smart fare pricing, and directional guidance using real-world GTFS (General Transit Feed Specification) datasets for the Cairo Metro network.
+## 1. Project Overview
+The **MetroVision** route planning engine is an advanced, production-ready backend service designed to calculate optimal metro routes, exact travel durations, smart fare pricing, and directional guidance using real-world GTFS datasets for the Cairo Metro network.
 
-## 2. System Architecture & Tech Stack (معمارية النظام والتقنيات المستخدمة)
+> محرك تخطيط الرحلات لنظام MetroVision هو خدمة خلفية (Backend) متطورة وجاهزة للإنتاج، تم تصميمها لحساب أفضل مسارات المترو، وأوقات السفر الدقيقة، وتسعير التذاكر الذكي، وتوجيهات الاتجاهات باستخدام بيانات GTFS الواقعية لشبكة مترو القاهرة.
+
+---
+
+## 2. System Architecture & Tech Stack
 - **Language:** Python 3.x
 - **Framework:** FastAPI (High-performance asynchronous API framework)
 - **Graph Engine:** NetworkX (Dijkstra's Shortest Path Algorithm)
 - **Data Processing:** Pandas (GTFS parsing and spatial processing)
-- **Integration Layer:** RESTful JSON API interfacing with C# .NET Frontend / Mobile Applications.
 
 ---
 
-## 3. API Specification & Endpoints (مواصفات نقاط الاتصال)
-
-### Endpoint: `/calculate-route`
-- **Method:** `POST`
-- **Description:** Accepts bilingual station names (Arabic/English), computes the fastest path based on real GTFS time weights, calculates exact fares according to official current tariff tiers, and returns a structured JSON response.
-
-#### Request Body Example (JSON):
-```json
-{
-  "start_station": "حلوان",
-  "end_station": "المعصرة"
-}
-{
-  "status": "success",
-  "input_start": "حلوان",
-  "input_end": "المعصرة",
-  "stations_count": 6,
-  "estimated_time_minutes": 10.0,
-  "estimated_fare": "10 جنيهات (حتى 9 محطات)",
-  "direction_advice": "اركب من محطة Helwan في اتجاه Ain Helwan حتى تصل إلى وجهتك.",
-  "route_path": [
-    "Helwan",
-    "Ain Helwan",
-    "Helwan University",
-    "Wadi Hof",
-    "Hadayek Helwan",
-    "El-Maasara"
-  ]
-}
-
-  ## 3. Key Engineering Features
+## 3. Key Engineering Features
 
 1. **Exact Time Calculation:** 
    - Dynamically computes edge weights using real scheduled arrival/departure time stamps from `stop_times.txt`.
