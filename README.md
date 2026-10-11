@@ -44,19 +44,25 @@ The **MetroVision** route planning engine is an advanced, production-ready backe
     "El-Maasara"
   ]
 }
-. Key Engineering Features (المميزات الهندسية الرئيسية)
 
-    Exact Time Calculation: Dynamically computes edge weights using real scheduled arrival/departure time stamps from stop_times.txt rather than static approximations, ensuring optimal path selection based on actual transit schedules.
-    (حساب الوقت الدقيق: يتم حساب أوزان المسارات ديناميكياً باستخدام طوابع زمن الوصول والمغادرة الفعلية المجدولة من ملفات الجدول الزمني بدلاً من التقديرات الثابتة).
+  ## 3. Key Engineering Features
 
-    Directional Guidance: Automatically generates smart boarding advice and direction instructions telling the user the exact departure station and the correct next station/line direction to follow.
-    (توجه الرحلة والاتجاهات: توليد نصائح إركاب ذكية وتوجيهات للاتجاه تخبر المستخدم بمحطة الانطلاق والاتجاه السليم للركوب حتى الوصول).
+1. **Exact Time Calculation:** 
+   - Dynamically computes edge weights using real scheduled arrival/departure time stamps from `stop_times.txt`.
+   - *حساب الوقت الدقيق: يتم حساب أوزان المسارات ديناميكياً باستخدام طوابع زمن الوصول والمغادرة الفعلية المجدولة من جداول التشغيل.*
 
-    Bilingual Support: Integrated custom translation mapping to seamlessly handle Arabic station queries alongside standard GTFS English identifiers, catering to local users natively.
-    (دعم اللغة العربية والإنجليزية: دمج خريطة ترجمة مخصصة تتعامل بسلاسة مع استعلامات المحطات باللغة العربية بجانب المعرفات الإنجليزية القياسية).
+2. **Directional Guidance:** 
+   - Automatically generates smart boarding advice and direction instructions telling the user the exact departure station and route line.
+   - *توجه الرحلة والاتجاهات: توليد نصائح إركاب ذكية وتوجيهات للاتجاه تخبر المستخدم بمحطة الانطلاق والاتجاه السليم بدقة.*
 
-    Official Tariff Integration: Automatically applies the current official Cairo Metro pricing tiers based on precise station counts, providing transparent fare estimation.
-    (دمج الأسعار الرسمية: تطبيق شرائح الأسعار الرسمية الحالية لمترو القاهرة تلقائياً بناءً على عدد المحطات بدقة).
+3. **Bilingual Support:** 
+   - Integrated custom translation mapping to seamlessly handle Arabic station queries alongside standard GTFS identifiers.
+   - *دعم اللغة العربية والإنجليزية: دمج خريطة ترجمة مخصصة تتعامل بسلاسة مع استعلامات المحطات باللغة العربية بجانب المعرفات الإنجليزية.*
 
-    Interactive Documentation: Fully documented via Swagger UI (/docs) for easy testing, validation, and smooth frontend integration with the C# .NET team.
-    (التوثيق التفاعلي: توثيق كامل عبر واجهة Swagger UI لتسهيل الاختبار والتحقق والتكامل السلس مع واجهة تيم الـ C# .NET).
+4. **Official Tariff Integration:** 
+   - Automatically applies current official Cairo Metro pricing tiers based on precise station counts.
+   - *دمج الأسعار الرسمية: تطبيق شرائح الأسعار الرسمية الحالية لمترو القاهرة تلقائياً بناءً على عدد المحطات.*
+
+5. **Interactive Documentation:** 
+   - Fully documented via Swagger UI (`/docs`) for easy testing and smooth integration with frontend teams.
+   - *التوثيق التفاعلي: توثيق كامل عبر واجهة Swagger UI لتسهيل الاختبار والتحقق والتكامل السلس مع واجهة التيم.*
