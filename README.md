@@ -18,37 +18,7 @@ The **MetroVision** route planning engine is an advanced, production-ready backe
 
 ---
 
-## 3. API Specification & Endpoints (مواصفات نقاط الاتصال)
-
-### Endpoint: `/calculate-route`
-- **Method:** `POST`
-- **Description:** Accepts bilingual station names (Arabic/English), computes the fastest path based on real GTFS time weights, calculates exact fares according to official current tariff tiers, and returns a structured JSON response.
-
-#### Request Body Example (JSON):
-```json
-{
-  "start_station": "حلوان",
-  "end_station": "المعصرة"
-}
-{
-  "status": "success",
-  "input_start": "حلوان",
-  "input_end": "المعصرة",
-  "stations_count": 6,
-  "estimated_time_minutes": 10.0,
-  "estimated_fare": "10 جنيهات (حتى 9 محطات)",
-  "direction_advice": "اركب من محطة Helwan في اتجاه Ain Helwan حتى تصل إلى وجهتك.",
-  "route_path": [
-    "Helwan",
-    "Ain Helwan",
-    "Helwan University",
-    "Wadi Hof",
-    "Hadayek Helwan",
-    "El-Maasara"
-  ]
-}
-
-## 4. Key Engineering Features
+## 3. Key Engineering Features
 
 1. **Exact Time Calculation:** 
    - Dynamically computes edge weights using real scheduled arrival/departure time stamps from `stop_times.txt`.
