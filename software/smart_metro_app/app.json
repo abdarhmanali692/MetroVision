@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "المترو الذكي",
+    "slug": "smart-metro-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "plugins": [
+      "expo-secure-store",
+      "expo-asset"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.smartmetro.app"
+    },
+    "android": {
+      "package": "com.smartmetro.app"
+    }
+  }
+}

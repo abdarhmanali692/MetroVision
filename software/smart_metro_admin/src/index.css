@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens from the Figma brief (sections 2–4). RGB triplets so Tailwind opacity modifiers work. */
+@layer base {
+  :root {
+    --background: 246 248 251;
+    --card: 255 255 255;
+    --elevated: 255 255 255;
+    --border: 226 232 240;
+    --input: 203 213 225;
+    --foreground: 15 23 42;
+    --muted-foreground: 91 107 127;
+    --muted: 238 242 247;
+    --secondary: 230 238 248;
+    --secondary-foreground: 27 95 168;
+    --primary: 27 95 168;
+    --navy: 11 36 71;
+    --accent: 214 40 40;
+    --success: 46 125 50;
+    --warning: 245 166 35;
+    --danger: 198 40 40;
+    --info: 2 136 209;
+    --line1: 214 40 40;
+    --line2: 27 95 168;
+    --line3: 46 125 50;
+    --lrt: 232 162 0;
+    --on-primary: 255 255 255;
+    --shadow-card: 0 4px 16px rgba(15,23,42,.06);
+    color-scheme: light;
+  }
+  .dark {
+    --background: 13 27 42;
+    --card: 22 40 61;
+    --elevated: 30 50 73;
+    --border: 42 65 89;
+    --input: 42 65 89;
+    --foreground: 234 242 250;
+    --muted-foreground: 143 163 184;
+    --muted: 30 50 73;
+    --secondary: 30 50 73;
+    --secondary-foreground: 234 242 250;
+    --primary: 62 143 217;
+    --navy: 10 27 51;
+    --accent: 230 57 70;
+    --success: 59 165 93;
+    --warning: 245 166 35;
+    --danger: 239 83 80;
+    --info: 41 182 246;
+    --line1: 230 57 70;
+    --line2: 62 143 217;
+    --line3: 59 165 93;
+    --lrt: 255 183 3;
+    --on-primary: 255 255 255;
+    --shadow-card: 0 8px 24px rgba(0,0,0,.35);
+    color-scheme: dark;
+  }
+  * { @apply border-border; }
+  body { @apply bg-background font-sans text-foreground antialiased; }
+  h1, h2, h3 { font-family: 'IBM Plex Sans Arabic', Tajawal, Cairo, Tahoma, sans-serif; }
+  :focus-visible { @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background; }
+}
+
+@layer utilities {
+  /* Brand gradient: navy -> blue -> green (brief §2) */
+  .bg-brand { background-image: linear-gradient(135deg, #0B2447 0%, #1B5FA8 55%, #2E7D32 100%); }
+  /* Geometric 8-point-star tile pattern, inspired by station tiles (brief §1) */
+  .tile-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='white' stroke-opacity='.10' stroke-width='1.2'%3E%3Crect x='14' y='14' width='28' height='28'/%3E%3Crect x='14' y='14' width='28' height='28' transform='rotate(45 28 28)'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  .shadow-card { box-shadow: var(--shadow-card); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
